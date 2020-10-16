@@ -1,33 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hangkim <hangkim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/16 18:31:34 by hangkim           #+#    #+#             */
-/*   Updated: 2020/10/16 22:55:28 by hangkim          ###   ########.fr       */
+/*   Created: 2020/10/16 22:48:40 by hangkim           #+#    #+#             */
+/*   Updated: 2020/10/16 22:55:43 by hangkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t      ft_strlcat(char *dst, const char *src, size_t dstsize)
+char    *ft_strchr(const char *s, int c)
 {
-    size_t  dlen;
-	size_t  slen;
-	size_t 	i;
-
-	dlen = ft_strlen(dst);
-	slen = ft_strlen(src);
-	i = 0;
-	while (src[i] && dlen + i + 1 < size)
-	{
-		dest[dlen + i] = src[i];
-		i++;
-	}
-	dest[dlen + i] = '\0';
-	if (dlen < dstsize)
-		return (slen + dlen);
-	return (slen + dstsize);
+    while (1)
+    {
+        if (*s == (char)c)
+            return ((char *)s);
+        if (*s =='\0')
+            return (0);
+        s++;
+    }
 }

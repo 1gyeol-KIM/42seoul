@@ -6,7 +6,7 @@
 /*   By: hangkim <hangkim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/15 20:21:23 by hangkim           #+#    #+#             */
-/*   Updated: 2020/10/16 11:10:50 by hangkim          ###   ########.fr       */
+/*   Updated: 2020/10/16 23:45:23 by hangkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,13 @@ void    *ft_memccpy(void *dst, const void *src, int c, size_t n);
 void    *ft_memmove(void *dst, const void *src, size_t n);
 void    *ft_memchr(const void *src, int c, size_t n);
 int     memcmp(const void *src1, const void *src2, size_t n);
+
+size_t  ft_strlen(const char *s);
+size_t  ft_strlcpy(char *dst, const char *src, size_t dstsize);
+size_t  ft_strlcat(char *dst, const char *src, size_t dstsize);
+char    *ft_strchr(const char *s, int c);
+char	*strrchr(const char *s, int c);
+char	*strnstr(const char *haystack, const char *needle, size_t len);
 
 
 #endif
