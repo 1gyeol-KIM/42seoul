@@ -6,7 +6,7 @@
 /*   By: hangkim <hangkim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/15 20:21:23 by hangkim           #+#    #+#             */
-/*   Updated: 2020/10/15 21:32:03 by hangkim          ###   ########.fr       */
+/*   Updated: 2020/10/16 11:10:50 by hangkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,11 @@ typedef struct      s_list
 
 void    *ft_memset(void *ptr, int value, size_t len);
 void    ft_bzero(void *s, size_t n);
+void    *ft_memcpy(void *dst, const void *src, size_t num);
+void    *ft_memccpy(void *dst, const void *src, int c, size_t n);
+void    *ft_memmove(void *dst, const void *src, size_t n);
+void    *ft_memchr(const void *src, int c, size_t n);
+int     memcmp(const void *src1, const void *src2, size_t n);
 
 
 #endif

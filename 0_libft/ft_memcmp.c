@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hangkim <hangkim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/15 21:37:38 by hangkim           #+#    #+#             */
-/*   Updated: 2020/10/16 10:13:49 by hangkim          ###   ########.fr       */
+/*   Created: 2020/10/16 11:02:47 by hangkim           #+#    #+#             */
+/*   Updated: 2020/10/16 11:08:51 by hangkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    *ft_memcpy(void *dst, const void *src, size_t num)
+int     memcmp(const void *src1, const void *src2, size_t n)
 {
-    unsigned char *d;
-    unsigned char *s;
+    unsigned char *s1;
+    unsigned char *s2;
 
-    if (!(dst || src))
-        return (dst);
-
-    d = (unsigned char *)dst;
-    s = (unsigned char *)src;
-    while (num--)
-        *d++ = *s++;
-    return (dst);
+    s1 = (unsigned char *)src1;
+    s2 = (unsigned char *)src2;
+    while (n--)
+    {
+        if (*s1++ != *s2++)
+            return (*s1 - *s2);
+    }
+    return (0);
 }

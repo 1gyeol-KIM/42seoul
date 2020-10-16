@@ -3,9 +3,16 @@
 
 int main()
 {
-    char a[20];
+  char *pch;
+  char str[] = "Example string";
+  pch = (char*)ft_memchr(str, 'p', sizeof(str));
 
-    ft_bzero(a, sizeof(a));
-    for(int i = 0; i < (sizeof(a)/sizeof(char)); i++)
-        printf("%d\n", a[i]);
+  if (pch != NULL)
+    printf("'p' found at position %ld.\n", pch - str + 1);
+  else
+    printf("'p' not found.\n");
+
+  return 0;
+    // for(int i = 0; i < (sizeof(a)/sizeof(char)); i++)
+    //     printf("%d\n", a[i]);
 }
