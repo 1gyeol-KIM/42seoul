@@ -4,15 +4,11 @@
 int main()
 {
   char *pch;
-  char str[] = "Example string";
-  pch = (char*)ft_memchr(str, 'p', sizeof(str));
-
-  if (pch != NULL)
-    printf("'p' found at position %ld.\n", pch - str + 1);
-  else
-    printf("'p' not found.\n");
-
-  return 0;
-    // for(int i = 0; i < (sizeof(a)/sizeof(char)); i++)
-    //     printf("%d\n", a[i]);
+  char str1[] = "abccab";
+  char str2[] = "ab";
+  pch = ft_strtrim(str1, str2);
+  printf("%lu\n", sizeof(pch));
+  printf("pch=%s\n", pch);
+  for(int i = 0; i < (sizeof(pch)/sizeof(char)); i++)
+    printf("%c\n", pch[i]);
 }
