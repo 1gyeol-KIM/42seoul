@@ -3,12 +3,15 @@
 
 int main()
 {
-  char *pch;
-  char str1[] = "abccab";
-  char str2[] = "ab";
-  pch = ft_strtrim(str1, str2);
-  printf("%lu\n", sizeof(pch));
-  printf("pch=%s\n", pch);
-  for(int i = 0; i < (sizeof(pch)/sizeof(char)); i++)
-    printf("%c\n", pch[i]);
+  char **pch;
+  char str1[] = "aa*bb*cc";
+  pch = ft_split(str1, '*');
+  printf("pch[0][0] = %c\n", pch[0][0]);
+  for(int i = 0; i < 3; i++)
+  {
+    for(int j = 0; j < 3; j++)
+      printf("pch[%d][%d]=%c ",i, j, pch[i][j]);
+    printf("\n");
+  }
+  return (0);
 }
