@@ -6,12 +6,12 @@
 /*   By: hangkim <hangkim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/20 17:21:41 by hangkim           #+#    #+#             */
-/*   Updated: 2020/10/20 21:07:28 by hangkim          ###   ########.fr       */
+/*   Updated: 2020/10/21 15:23:02 by hangkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
+
 static int     cnt_row_num(char *s, char c)
 {
     int cnt;
@@ -82,10 +82,7 @@ static void    split_str(char **res, char *s, char c)
 		else
 		{
             flag = 0;
-            printf("row=%d col=%d\n", row, col);
-            printf("*s=%c\n", *s);
 			res[row][col] = *s;
-            printf("res[%d][%d]=%c\n", row, col, res[row][col]);
             col++;
 		}
 		s++;
