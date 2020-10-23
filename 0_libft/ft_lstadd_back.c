@@ -1,24 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hangkim <hangkim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/23 16:19:53 by hangkim           #+#    #+#             */
-/*   Updated: 2020/10/23 16:41:11 by hangkim          ###   ########.fr       */
+/*   Created: 2020/10/23 17:36:24 by hangkim           #+#    #+#             */
+/*   Updated: 2020/10/23 18:28:50 by hangkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list *ft_lstnew(void *content)
+void ft_lstadd_back(t_list **lst, t_list *new)
 {
-    t_list *ptr;
-   
-    if (!(ptr = malloc(sizeof(t_list))))
-        return (0);
-    ptr->content = content;
-    ptr->next = 0;
-    return (ptr);
+    if (!(*lst))
+        (*lst)->next = new;
+    while (!((*lst)->next))
+        (*lst) = (*lst)->next;
+    (*lst)->next = new;
 }
