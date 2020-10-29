@@ -6,13 +6,13 @@
 /*   By: hangkim <hangkim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/17 14:02:26 by hangkim           #+#    #+#             */
-/*   Updated: 2020/10/17 14:27:27 by hangkim          ###   ########.fr       */
+/*   Updated: 2020/10/29 19:04:28 by hangkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_chk_char(char c)
+static int		ft_chk_char(char c)
 {
 	if (c == '\t' || c == '\n' || c == '\v')
 		return (1);
@@ -22,6 +22,7 @@ int		ft_chk_char(char c)
 		return (-1);
 	if ('0' <= c && c <= '9')
 		return (2);
+	return (0);
 }
 
 int		ft_atoi(const char *str)
