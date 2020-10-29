@@ -6,20 +6,20 @@
 /*   By: hangkim <hangkim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/23 17:32:04 by hangkim           #+#    #+#             */
-/*   Updated: 2020/10/29 20:29:48 by hangkim          ###   ########.fr       */
+/*   Updated: 2020/10/29 21:07:59 by hangkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list  *ft_lstlast(t_list *lst)
+t_list	*ft_lstlast(t_list *lst)
 {
-    if (!lst)
-        return (0);
-    while (1)
-    {
-        if (!(lst->next))
-            return (lst);
-        lst = lst->next;
-    }
+	if (!lst)
+		return (0);
+	while (1)
+	{
+		if (!(lst->next))
+			return (lst);
+		lst = lst->next;
+	}
 }

@@ -6,15 +6,15 @@
 /*   By: hangkim <hangkim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/17 14:49:33 by hangkim           #+#    #+#             */
-/*   Updated: 2020/10/17 14:56:53 by hangkim          ###   ########.fr       */
+/*   Updated: 2020/10/29 21:14:55 by hangkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int     ft_toupper(int c)
+int	ft_toupper(int c)
 {
-    if ('a' <= c && c <= 'z')
-        return (c - 32);
-    return (c);
+	if ('a' <= c && c <= 'z')
+		return (c - 32);
+	return (c);
 }

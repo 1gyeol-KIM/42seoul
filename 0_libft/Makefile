@@ -6,14 +6,14 @@
 #    By: hangkim <hangkim@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/10/28 19:45:20 by hangkim           #+#    #+#              #
-#    Updated: 2020/10/29 19:12:29 by hangkim          ###   ########.fr        #
+#    Updated: 2020/10/29 21:21:12 by hangkim          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 
-TARGET = libft.a
+NAME = libft.a
 HEADER = libft.h
 SRCS =			ft_atoi.c \
 				ft_bzero.c \
@@ -28,6 +28,7 @@ SRCS =			ft_atoi.c \
 				ft_memccpy.c \
 				ft_memchr.c \
 				ft_memcmp.c \
+				ft_memcpy.c \
 				ft_memmove.c \
 				ft_memset.c \
 				ft_putchar_fd.c \
@@ -47,7 +48,7 @@ SRCS =			ft_atoi.c \
 				ft_strtrim.c \
 				ft_substr.c \
 				ft_tolower.c \
-				ft_toupper.c 
+				ft_toupper.c
 OBJS = $(SRCS:.c=.o)
 
 SRCS_BONUS =	ft_lstadd_back.c \
@@ -63,18 +64,18 @@ OBJS_BONUS = $(SRCS_BONUS:.c=.o)
 
 .PHONY: all clean fclean bonus re
 
-all : $(TARGET)
+all : $(NAME)
 
 clean :
 	rm -f $(OBJS) $(OBJS_BONUS)
 
 fclean :
-	rm -f $(TARGET)
+	rm -f $(NAME)
 
 re : fclean all
 
-$(TARGET) : $(OBJS)
+$(NAME) : $(OBJS)
 	ar rc $@ $^
 
 bonus : $(OBJS_BONUS)
-	ar rc $(TARGET) $^
+	ar rc $(NAME) $^
