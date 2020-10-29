@@ -6,7 +6,7 @@
 /*   By: hangkim <hangkim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/16 23:07:28 by hangkim           #+#    #+#             */
-/*   Updated: 2020/10/17 13:45:48 by hangkim          ###   ########.fr       */
+/*   Updated: 2020/10/29 20:27:35 by hangkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char *strnstr(const char *haystack, const char *needle, size_t len)
     if (!needle)
         return (char *)(haystack);
     needle_len = ft_strlen(needle);
-    while (len-- && haystac != '\0')
+    while (len-- && haystack != '\0')
     {
         if (ft_strncmp(haystack, needle, needle_len))
             return (char *)(haystack);

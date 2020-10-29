@@ -6,7 +6,7 @@
 /*   By: hangkim <hangkim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/29 19:11:25 by hangkim           #+#    #+#             */
-/*   Updated: 2020/10/29 20:12:24 by hangkim          ###   ########.fr       */
+/*   Updated: 2020/10/29 20:13:37 by hangkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-    int     i;
+    size_t  i;
     size_t  len;
     char    *res;
 
