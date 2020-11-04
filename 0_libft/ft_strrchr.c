@@ -6,13 +6,13 @@
 /*   By: hangkim <hangkim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/16 22:58:20 by hangkim           #+#    #+#             */
-/*   Updated: 2020/10/29 21:14:22 by hangkim          ###   ########.fr       */
+/*   Updated: 2020/11/04 16:34:26 by hangkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*strrchr(const char *s, int c)
+char	*ft_strrchr(const char *s, int c)
 {
 	size_t len;
 	size_t i;

@@ -6,7 +6,7 @@
 /*   By: hangkim <hangkim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/19 20:48:02 by hangkim           #+#    #+#             */
-/*   Updated: 2020/10/29 21:12:42 by hangkim          ###   ########.fr       */
+/*   Updated: 2020/11/04 19:42:17 by hangkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	if (!ptr)
 		return (0);
 	ft_memcpy(ptr, s1, slen1);
-	ft_memcpy(&ptr[slen1 - 1], s2, slen2);
+	ft_memcpy(&ptr[slen1], s2, slen2);
 	ptr[slen1 + slen2] = '\0';
 	return (ptr);
 }

@@ -1,16 +1,5 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: hangkim <hangkim@student.42.fr>            +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/29 21:11:34 by hangkim           #+#    #+#             */
-/*   Updated: 2020/11/04 20:48:47 by hangkim          ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-#include "libft.h"
+#include <stdio.h>
+#include <stdlib.h>
 
 static int	cnt_row_num(char *s, char c)
 {
@@ -104,6 +93,7 @@ char		**ft_split(char const *s, char c)
 	char	**res;
 
 	row_num = cnt_row_num((char *)s, c);
+	printf("rownum=%d\n", row_num);
 	if (!(row_len = (int *)malloc(sizeof(int) * row_num)))
 		return (0);
 	cnt_row_len(row_len, (char *)s, c, 1);
@@ -112,10 +102,30 @@ char		**ft_split(char const *s, char c)
 	index = 0;
 	while (index < row_num)
 	{
+		printf("index=%d\n", index);
 		res[index] = (char *)malloc(sizeof(char) * (row_len[index] + 1));
 		index++;
 	}
 	split_str(res, (char *)(s), c, 1);
-	res[index] = 0;
+	printf("hi\n");
 	return (res);
 }
+
+int main()
+{
+  int i=0;
+  int j=0;
+  char **res;
+  res = ft_split("lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultricies diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.", 'z');
+  while (i < 1)
+  {
+    while (j < 253)
+    {
+      printf("%c", res[i][j]);
+      j++;
+    }
+    i++;
+    printf("\n");
+  }
+    return 0;
+  }
