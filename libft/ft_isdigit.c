@@ -6,7 +6,7 @@
 /*   By: hangkim <hangkim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/17 14:34:40 by hangkim           #+#    #+#             */
-/*   Updated: 2020/10/29 21:42:35 by hangkim          ###   ########.fr       */
+/*   Updated: 2020/11/06 21:47:49 by hangkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int		ft_isdigit(int c)
 {
-	if ('0' <= (unsigned char)c && (unsigned char)c <= '9')
+	if ('0' <= c && c <= '9')
 		return (1);
 	return (0);
 }

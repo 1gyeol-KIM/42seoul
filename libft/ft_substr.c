@@ -6,7 +6,7 @@
 /*   By: hangkim <hangkim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/17 15:44:21 by hangkim           #+#    #+#             */
-/*   Updated: 2020/10/29 21:14:43 by hangkim          ###   ########.fr       */
+/*   Updated: 2020/11/06 21:03:57 by hangkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,17 +19,17 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*ptr;
 
 	slen = ft_strlen(s);
+	if ((size_t)start > slen)
+		return (ft_strdup(""));
 	if ((slen - (size_t)start) < len)
 	{
-		ptr = (char *)malloc(sizeof(char) * (slen - (size_t)start + 1));
-		if (!ptr)
+		if (!(ptr = (char *)malloc(sizeof(char) * (len + 1))))
 			return (0);
 		ptrsize = ft_strlcpy(ptr, &s[start], slen - start + 1);
 	}
 	else
 	{
-		ptr = (char *)malloc(sizeof(char) * (len + 1));
-		if (!ptr)
+		if (!(ptr = (char *)malloc(sizeof(char) * (len + 1))))
 			return (0);
 		ptrsize = ft_strlcpy(ptr, &s[start], len + 1);
 	}

@@ -6,7 +6,7 @@
 #    By: hangkim <hangkim@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/10/28 19:45:20 by hangkim           #+#    #+#              #
-#    Updated: 2020/10/29 21:21:12 by hangkim          ###   ########.fr        #
+#    Updated: 2020/11/06 22:07:38 by hangkim          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -77,5 +77,5 @@ re : fclean all
 $(NAME) : $(OBJS)
 	ar rc $@ $^
 
-bonus : $(OBJS_BONUS)
-	ar rc $(NAME) $^
+bonus : $(NAME) $(OBJS_BONUS)
+	ar rc $(NAME) $(OBJS_BONUS)

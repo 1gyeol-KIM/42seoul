@@ -6,7 +6,7 @@
 /*   By: hangkim <hangkim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/21 15:23:21 by hangkim           #+#    #+#             */
-/*   Updated: 2020/10/29 21:06:59 by hangkim          ###   ########.fr       */
+/*   Updated: 2020/11/06 21:07:03 by hangkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,5 +57,6 @@ char		*ft_itoa(int n)
 		get_str(res, -n, len - 1);
 		*res = '-';
 	}
+	res[len] = '\0';
 	return (res);
 }
