@@ -6,7 +6,7 @@
 /*   By: hangkim <hangkim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/17 14:02:26 by hangkim           #+#    #+#             */
-/*   Updated: 2020/10/29 22:00:47 by hangkim          ###   ########.fr       */
+/*   Updated: 2020/11/10 13:24:07 by hangkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ static int	ft_chk_char(char c)
 
 int			ft_atoi(const char *str)
 {
-	int		i;
-	int		res;
-	int		sign;
+	int					i;
+	unsigned long long	res;
+	int					sign;
 
 	i = 0;
 	sign = 1;
@@ -47,5 +47,9 @@ int			ft_atoi(const char *str)
 		res = res * 10 + (str[i] - '0');
 		i++;
 	}
+	if (res >= LONG_MAX && sign == 1)
+		return (-1);
+	else if (res > LONG_MAX && sign == -1)
+		return (0);
 	return (res * sign);
 }

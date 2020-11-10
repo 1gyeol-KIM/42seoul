@@ -6,7 +6,7 @@
 /*   By: hangkim <hangkim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/21 15:23:21 by hangkim           #+#    #+#             */
-/*   Updated: 2020/11/06 21:07:03 by hangkim          ###   ########.fr       */
+/*   Updated: 2020/11/10 13:20:44 by hangkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,8 @@ char		*ft_itoa(int n)
 		len = cnt_nlen(n);
 	else
 		len = cnt_nlen(-n) + 1;
-	res = (char *)malloc(sizeof(char) * (len + 1));
+	if (!(res = (char *)malloc(sizeof(char) * (len + 1))))
+		return (0);
 	if (n >= 0)
 		get_str(res, n, len - 1);
 	else
