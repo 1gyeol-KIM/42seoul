@@ -6,7 +6,7 @@
 /*   By: hangkim <hangkim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/29 21:11:34 by hangkim           #+#    #+#             */
-/*   Updated: 2020/11/04 20:48:47 by hangkim          ###   ########.fr       */
+/*   Updated: 2020/11/11 14:50:53 by hangkim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,6 +96,13 @@ static void	split_str(char **res, char *s, char c, int flag)
 		res[row][col] = '\0';
 }
 
+static void	ft_free(char **s, int i)
+{
+	while (i--)
+		free(s[i]);
+	free(s);
+}
+
 char		**ft_split(char const *s, char c)
 {
 	int		index;
@@ -112,7 +119,11 @@ char		**ft_split(char const *s, char c)
 	index = 0;
 	while (index < row_num)
 	{
-		res[index] = (char *)malloc(sizeof(char) * (row_len[index] + 1));
+		if (!(res[index] = (char *)malloc(sizeof(char) * (row_len[index] + 1))))
+		{
+			ft_free(res, index - 1);
+			return (0);
+		}
 		index++;
 	}
 	split_str(res, (char *)(s), c, 1);
