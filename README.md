@@ -1,2 +1,2 @@
 # 42cursus
-- Seoul, hangkim
+- 42 Seoul, hangkim
