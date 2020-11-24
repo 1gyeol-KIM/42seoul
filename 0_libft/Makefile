@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: hangkim <hangkim@student.42.fr>            +#+  +:+       +#+         #
+#    By: hangyeol <hangyeol@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/10/28 19:45:20 by hangkim           #+#    #+#              #
-#    Updated: 2020/11/06 22:07:38 by hangkim          ###   ########.fr        #
+#    Updated: 2020/11/24 19:08:13 by hangyeol         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -69,7 +69,7 @@ all : $(NAME)
 clean :
 	rm -f $(OBJS) $(OBJS_BONUS)
 
-fclean :
+fclean : clean
 	rm -f $(NAME)
 
 re : fclean all

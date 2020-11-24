@@ -3,100 +3,47 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hangkim <hangkim@student.42.fr>            +#+  +:+       +#+        */
+/*   By: hangyeol <hangyeol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/29 21:11:34 by hangkim           #+#    #+#             */
-/*   Updated: 2020/11/11 14:50:53 by hangkim          ###   ########.fr       */
+/*   Updated: 2020/11/24 19:07:58 by hangyeol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	cnt_row_num(char *s, char c)
+static int	cnt_word(char const *s, char c)
 {
-	int cnt;
-	int flag;
+	int	cnt;
 
 	cnt = 0;
-	flag = 1;
+	while (*s && *s ==c)
+		s++;
 	while (*s)
 	{
-		if (*s == c)
-		{
-			if (!flag)
-			{
-				cnt++;
-				flag = 1;
-			}
-		}
-		else
-			flag = 0;
-		s++;
-	}
-	if (!flag)
 		cnt++;
+		while (*s && *s != c)
+			s++;
+		while (*s && *s == c)
+			s++;
+	}
 	return (cnt);
 }
 
-static void	cnt_row_len(int *row_len, char *s, char c, int flag)
+static int	cnt_size(char const *s, char c)
 {
-	int cnt;
-	int index;
+	int	size;
 
-	cnt = 0;
-	index = 0;
-	while (*s)
+	size = 0;
+	while (*s && *s != c)
 	{
-		if (*s == c)
-		{
-			if (!flag)
-			{
-				flag = 1;
-				row_len[index++] = cnt;
-				cnt = 0;
-			}
-		}
-		else
-		{
-			flag = 0;
-			cnt++;
-		}
+		size++;
 		s++;
 	}
-	if (!flag)
-		row_len[index] = cnt;
+	return (size);
 }
 
-static void	split_str(char **res, char *s, char c, int flag)
-{
-	int		col;
-	int		row;
-
-	col = 0;
-	row = 0;
-	while (*s)
-	{
-		if (*s == c)
-		{
-			if (!flag)
-			{
-				flag = 1;
-				res[row++][col] = '\0';
-				col = 0;
-			}
-		}
-		else
-		{
-			flag = 0;
-			res[row][col++] = *s;
-		}
-		s++;
-	}
-	if (!flag)
-		res[row][col] = '\0';
-}
-
-static void	ft_free(char **s, int i)
+static void	free_array(char **s, int i)
 {
 	while (i--)
 		free(s[i]);
@@ -105,28 +52,31 @@ static void	ft_free(char **s, int i)
 
 char		**ft_split(char const *s, char c)
 {
-	int		index;
-	int		row_num;
-	int		*row_len;
 	char	**res;
+	int		i;
+	int		row_size;
 
-	row_num = cnt_row_num((char *)s, c);
-	if (!(row_len = (int *)malloc(sizeof(int) * row_num)))
+	if (!s)
 		return (0);
-	cnt_row_len(row_len, (char *)s, c, 1);
-	if (!(res = (char **)malloc(sizeof(char *) * (row_num + 1))))
+	if (!(res = (char **)malloc(sizeof(char *) * (cnt_word(s, c) + 1))))
 		return (0);
-	index = 0;
-	while (index < row_num)
+	i = 0;
+	while (*s)
 	{
-		if (!(res[index] = (char *)malloc(sizeof(char) * (row_len[index] + 1))))
+		if (*s && *s != c)
 		{
-			ft_free(res, index - 1);
-			return (0);
+			row_size = cnt_size(s, c);
+			if (!(res[i] = (char *)malloc(sizeof(char) * (row_size + 1))))
+			{
+				free_array(res, i - 1);
+				return (0);
+			}
+			ft_strlcpy(res[i++], s, row_size + 1);
+			s += row_size;
 		}
-		index++;
+		else
+			s++;
 	}
-	split_str(res, (char *)(s), c, 1);
-	res[index] = 0;
+	res[i] = 0;
 	return (res);
 }
