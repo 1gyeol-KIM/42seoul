@@ -1,2 +1,2 @@
 # 42cursus
-- 42 Seoul
+- 42 Seoul subject
